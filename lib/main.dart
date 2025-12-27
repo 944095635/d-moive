@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
         ),
       ),
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       home: const SplashPage(),
     );

@@ -22,12 +22,13 @@ class BlurWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
+      clipBehavior: Clip.antiAlias,
       borderRadius: radius,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: sigmaX, sigmaY: sigmaY),
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: Color.fromARGB(180, 0, 0, 0),
+            color: Color.fromARGB(60, 20, 20, 20),
           ),
           child: child,
         ),
