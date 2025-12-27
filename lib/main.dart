@@ -16,11 +16,22 @@ class MyApp extends StatelessWidget {
       title: 'DV',
       darkTheme: ThemeData(
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-          systemOverlayStyle: SystemUiOverlayStyle.light,
+          elevation: 0,
+          scrolledUnderElevation: 0,
+          backgroundColor: Colors.transparent,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.amber,
+            systemNavigationBarColor: Colors.transparent,
+          ),
         ),
+        fontFamily: "Poppins",
         scaffoldBackgroundColor: Colors.black,
         colorScheme: ColorScheme.dark(),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          elevation: 0,
+          backgroundColor: Color(0x00000000),
+          type: BottomNavigationBarType.fixed,
+        ),
       ),
       themeMode: ThemeMode.dark,
       home: const SplashPage(),
