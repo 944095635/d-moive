@@ -40,6 +40,15 @@ dependencies:
   # 图像渲染
   flutter_svg: ^2.2.3
 
+  # 视频渲染
+  media_kit: ^1.2.6
+  media_kit_video: ^2.0.1
+  # media_kit_video:                     # 临时包
+  #   git:
+  #     url: https://github.com/kaankoken/media-kit.git 
+  #     path: media_kit_video
+  media_kit_libs_video: ^1.0.7
+
   # 布局样式
   flutter_styled:                #布局样式
     #path: ../flutter_styled // 本地引用方式
@@ -71,6 +80,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/svgs/
     - assets/images/moives/
 

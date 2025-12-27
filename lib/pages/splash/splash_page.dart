@@ -21,7 +21,7 @@ class SplashPage extends StatelessWidget {
   }
 
   void _init() async {
-    await Future.delayed(Duration(seconds: 3));
-    Get.to(() => FramePage(), transition: Transition.zoom);
+    await Future.delayed(Duration(seconds: 2));
+    Get.offAll(() => FramePage(), transition: Transition.zoom);
   }
 }

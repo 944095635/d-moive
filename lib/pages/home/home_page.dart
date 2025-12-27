@@ -1,6 +1,6 @@
 import 'package:d_moive/models/moive.dart';
 import 'package:d_moive/pages/home/home_logic.dart';
-import 'package:d_moive/pages/home/home_top_item.dart';
+import 'package:d_moive/pages/home/home_item.dart';
 import 'package:d_moive/themes/dimensions.dart';
 import 'package:d_moive/widgets/body_title.dart';
 import 'package:flutter/material.dart';
@@ -30,22 +30,25 @@ class HomePage extends GetView<HomeLogic> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                BodyTitle("Top trending moives"),
+                BodyTitle("热门"),
                 _buildTopList(),
 
-                BodyTitle("Continue watching"),
+                BodyTitle("正在播放"),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: Dimensions.pagePadding,
                   ),
-                  child: HomeTopItem(
+                  child: HomeItem(
                     controller.continueBig,
                     cacheWidth: 650,
                     aspectRatio: 16 / 9,
+                    onTap: () {
+                      controller.onTapToInfo(controller.continueBig);
+                    },
                   ),
                 ),
 
-                BodyTitle("New released"),
+                BodyTitle("最新"),
               ],
             ),
           ),
@@ -77,9 +80,12 @@ class HomePage extends GetView<HomeLogic> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           Moive moive = controller.tops[index];
-          return HomeTopItem(
+          return HomeItem(
             moive,
             aspectRatio: 0.64,
+            onTap: () {
+              controller.onTapToInfo(moive);
+            },
           );
         },
         separatorBuilder: (BuildContext context, int index) {
@@ -94,10 +100,13 @@ class HomePage extends GetView<HomeLogic> {
       itemCount: controller.continues.length,
       itemBuilder: (context, index) {
         Moive moive = controller.continues[index];
-        return HomeTopItem(
+        return HomeItem(
           moive,
           cacheWidth: 420,
           aspectRatio: 5 / 7,
+          onTap: () {
+            controller.onTapToInfo(moive);
+          },
         );
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
