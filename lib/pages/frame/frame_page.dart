@@ -46,23 +46,29 @@ class _FramePageState extends State<FramePage> {
             ),
             BottomNavigationBarItem(
               activeIcon: SvgPicture.asset(
-                "assets/svgs/home_active.svg",
+                "assets/svgs/video_active.svg",
               ),
-              icon: SvgPicture.asset("assets/svgs/home.svg"),
+              icon: SvgPicture.asset(
+                "assets/svgs/video.svg",
+              ),
               label: "Contacts",
             ),
             BottomNavigationBarItem(
               activeIcon: SvgPicture.asset(
-                "assets/svgs/home_active.svg",
+                "assets/svgs/serach_active.svg",
+                width: 22,
               ),
-              icon: SvgPicture.asset("assets/svgs/home.svg"),
+              icon: SvgPicture.asset(
+                "assets/svgs/serach.svg",
+                width: 22,
+              ),
               label: "SETTING",
             ),
             BottomNavigationBarItem(
               activeIcon: SvgPicture.asset(
-                "assets/svgs/home_active.svg",
+                "assets/svgs/mine_active.svg",
               ),
-              icon: SvgPicture.asset("assets/svgs/home.svg"),
+              icon: SvgPicture.asset("assets/svgs/mine.svg"),
               label: "SETTING",
             ),
           ],

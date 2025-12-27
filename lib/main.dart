@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         fontFamily: "Poppins",
+        splashFactory: NoSplash.splashFactory,
         scaffoldBackgroundColor: Colors.black,
         colorScheme: ColorScheme.dark(),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(

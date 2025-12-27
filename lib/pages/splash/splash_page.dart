@@ -1,6 +1,6 @@
 import 'package:d_moive/pages/frame/frame_page.dart';
-import 'package:d_moive/values/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class SplashPage extends StatelessWidget {
@@ -12,19 +12,16 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0),
       body: Center(
-        child: Text(
-          "DV",
-          style: TextStyle(
-            fontSize: 120,
-            fontFamily: Fonts.font,
-          ),
+        child: SvgPicture.asset(
+          "assets/svgs/logo.svg",
+          width: 240,
         ),
       ),
     );
   }
 
   void _init() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 3));
     Get.to(() => FramePage(), transition: Transition.zoom);
   }
 }
